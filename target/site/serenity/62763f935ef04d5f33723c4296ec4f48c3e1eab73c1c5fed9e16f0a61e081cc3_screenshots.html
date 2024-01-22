@@ -1,0 +1,302 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Screenshots</title>
+
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+<!--[if IE 7]>
+<!--<link rel="stylesheet" href="font-awesome/css/font-awesome-ie7.min.css">-->
+
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="fontawesome-free-5.7.2-web/css/v4-shims.min.css">
+
+<!-- JQuery -->
+<script type="text/javascript" src="scripts/jquery-1.11.1.min.js"></script><link rel="stylesheet" type="text/css" href="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.css">
+<link rel="stylesheet" type="text/css" href="chartist/dist/chartist.min.css">
+<script src="chartist/dist/chartist.min.js"></script>
+<script src="chartist/chartist-plugin-tooltip/dist/chartist-plugin-tooltip.min.js"></script>
+<!-- Required Stylesheets -->
+<link href="bootstrap-treeview/dist/bootstrap-treeview.min.css" rel="stylesheet">
+
+<!-- Required Javascript -->
+<script src="bootstrap-treeview/dist/bootstrap-treeview.min.js"></script><!-- DataTables -->
+<link type="text/css" href="datatables/1.10.19/datatables.min.css" rel="stylesheet" />
+<script type="text/javascript" src="datatables/1.10.19/datatables.min.js"></script>
+<script type="text/javascript" src="datatables/1.10.19/time-elapsed-dhms.js"></script>
+
+<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+<script type="text/javascript" src="datatables/1.10.19/datatables.bootstrap4.min.js"></script>
+<link type="text/css" href="datatables/1.10.19/datatables.bootstrap4.min.css" rel="stylesheet" />
+
+<script>
+    jQuery.fn.dataTable.ext.type.order['time-elapsed-dhms-pre'] = function(data) {
+
+        var matches = data.match(/^(\d+(?:\.\d+)?)\s*([a-z]+)/i);
+        var multipliers = {
+            ms: 1,
+            s: 1000,
+            m: 60000,
+            h: 3600000,
+            d: 86400000
+        };
+
+        if (matches) {
+            var multiplier = multipliers[matches[2].toLowerCase()];
+            return parseFloat(matches[1]) * multiplier;
+        } else {
+            return -1;
+        };
+    };
+</script>
+<link rel="stylesheet" href="css/core.css"/>
+<link rel="stylesheet" href="css/link.css"/>
+<link type="text/css" media="screen" href="css/screen.css" rel="Stylesheet"/><!-- Nivo Slider -->
+<link rel="stylesheet" href="nivo-slider/3.2/nivo-slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="nivo-slider/3.2/themes/default/default.css" type="text/css" media="screen" />
+<script src="nivo-slider/3.2/jquery.nivo.slider.pack.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+
+        function getUrlVars() {
+            var vars = {};
+            var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (m, key, value) {
+                vars[key] = value;
+            });
+            return vars;
+        }
+
+        var screenshotIndex = getUrlVars()["screenshot"];
+
+        $(window).load(function () {
+            $('#slider').nivoSlider({
+                startSlide: screenshotIndex,
+                effect: 'fade',
+                animSpeed: 200,
+                manualAdvance: true
+            });
+        });
+
+        $(window).keydown(function(e) {
+            switch(e.which) {
+                case 37:
+                    $('a.nivo-prevNav').click();
+                    break;
+                case 39:
+                    $('a.nivo-nextNav').click();
+                    break;
+            }
+        });
+    </script>
+
+</head>
+
+<body>
+<div id="topheader">
+    <div id="topbanner">
+        <div id="logo"><a href="index.html"><img src="images/serenity-logo.png" border="0"/></a></div>
+        <div id="projectname-banner" style="float:right">
+            <span class="projectname">
+                <span class="projecttitle">Demo Project using Serenity and Cucumber</span>
+                <span class="projectsubtitle"></span>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="middlecontent">
+    <div id="contenttop">
+        <div class="middlebg">
+            <span class="breadcrumbs">
+                <a href="index.html">Home</a>
+                > <span class="truncate-40"><a
+                    href="fef04dd99665794cb7be59d3b24d59def0bf55a084729053dba3af3a5262b1fb.html">Buy Two Products In The Swaglabs Page.</a></span>
+                > <span class="truncate-60"><a
+                    href="62763f935ef04d5f33723c4296ec4f48c3e1eab73c1c5fed9e16f0a61e081cc3.html">Buy two products successful </a></span>
+                > Screenshots
+            </span>
+        </div>
+        <div class="rightbg"></div>
+    </div>
+
+    <div class="clr"></div>
+
+    <!--/* starts second table*/-->
+<div>
+    <ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#"><i class="fa fa-check-square-o"></i> Overall Test Results</a>
+        </li>
+        <li >
+            <a href="capabilities.html"><i class="fa fa-book"></i> Requirements</a>
+        </li>
+        <li >
+            <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="fa fa-comments-o"></i> Features</a>
+        </li>
+    </ul>
+    <span class="date-and-time"><a href="build-info.html"><i class="fa fa-info-circle"></i></a> Report generated 21-01-2024 19:47</span>
+    <br style="clear:left"/>
+</div>
+
+    <div class="clr"></div>
+
+
+    <div id="contentbody">
+        <div class="titlebar">
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td>
+                            <div>
+                                <h3 class="discreet-story-header">
+                                    <i class="fa fa-2x fa-comments-o"></i>
+                                    <span class="story-header-title">Buy Two Products In The Swaglabs Page. </span>
+                                    <span class="badge tag-badge" style="">Feature</span>
+                                </h3>
+
+                                <div class="discreet-requirement-narrative-title">
+                                As user<br />
+I want to navigate in swaglabs page<br />
+in order to buy two products.
+                                </div>
+                            </div>
+
+                        </td>
+                        <td valign="top" align="right">
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="18898afb9078d308bcf98afe37367456e186b014cfb22ea46bf1a8734d53c902.html">Ablo
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="cdbf979ec54dd3469e755abc46a3b839f019bb9a1856153a84833cdc85d3bbb1.html">Ernandez
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="9c966966ac32dd221b4f6420511aa04917a7da3553ae3b8d6357fba9d211d0da.html">Autor
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="3e050cc85121d092f35bb2d5f5a5e5b210a1ea487e84378ab492db65025b4853.html">Ndres
+                                    (tag)</a>
+                                </span>
+                            </p>
+                            <p class="tag">
+                                <span class="badge tag-badge" style="background:default;"
+                                    <i class="fa fa-tag"></i>&nbsp;<a class="tagLink" style="background:default;" href="777b02a9af748c4fcf34a71ec99474934f36aad7759a0ace43c9ac9c3311586a.html">Buy Products
+                                    (tag)</a>
+                                </span>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="story-title">
+                <table class="outcome-header">
+                    <tr>
+                        <td colspan="2" class="test-title-bar">
+                            <span class="outcome-icon"><a href='##beforetable'><i class='fa fa-check-circle-o success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="test-case-title">
+                                <span class="success-color">Buy two products successful
+                                    <span class="related-issue-title"></span>
+                                </span>
+                            </span>
+
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="clr"></div>
+
+    <div class="story-title">
+        <h3>Scenario:</h3>
+        <div class="scenario">Given that the user wants login in the page, he introduce the user and the password<br><table class='embedded'><thead><th>user</th><th>password</th></thead><tbody><tr><td>&lt;user&gt;</td><td>&lt;password&gt;</td></tr></tbody></table><br>When the user is in the home page he add to car two products<br>And make the checkout with the name, last_name and zip<br><table class='embedded'><thead><th>name</th><th>last_name</th><th>zip</th></thead><tbody><tr><td>&lt;name&gt;</td><td>&lt;last_name&gt;</td><td>&lt;zip&gt;</td></tr></tbody></table><br>Then Verify the text successful_process<br><table class='embedded'><tbody><tr><td>successful_process</td></tr><tr><td>&lt;successful_process&gt;</td></tr></tbody></table></div>
+    </div>
+
+    <div id="beforetable"></div>
+    <div id="contenttilttle">
+        <div class="slider-wrapper theme-default">
+            <div id="slider">
+                <img src="3447f45e1ceea0db265fa16668251409975f90e32866e4a3f86842841d2b5b00.png" title=" Example: {user=standard_user, password=secret_sauce, name=Pablo, last_name=Hernandez, zip=762021, successful_process=Thank you for your order!}" width="1920"/>
+                <img src="3447f45e1ceea0db265fa16668251409975f90e32866e4a3f86842841d2b5b00.png" title=" Given that the user wants login in the page, he introduce the user and the password
+| user | password |
+| standard_user | secret_sauce |" width="1920"/>
+                <img src="3447f45e1ceea0db265fa16668251409975f90e32866e4a3f86842841d2b5b00.png" title=" The user initially open" width="1920"/>
+                <img src="3447f45e1ceea0db265fa16668251409975f90e32866e4a3f86842841d2b5b00.png" title=" the user opens the Initial page" width="1920"/>
+                <img src="9e621f0cd1d3def9e2c94cc9cdfb4ba6fdd630c56c8b949237933d54bab88410.png" title=" the user enters 'standard_user' into Insert the username" width="1920"/>
+                <img src="d609ea2defa8cb455d83ea02e5fe868c6f6e81a9adeef7b814c161944c72028a.png" title=" the user enters 'secret_sauce' into Insert the password" width="1920"/>
+                <img src="d4beb3a072d8010d4f5aea419ca5bbc58ff040e08d20d40855c93370f06818c0.png" title=" the user clicks on login button" width="1920"/>
+                <img src="d4beb3a072d8010d4f5aea419ca5bbc58ff040e08d20d40855c93370f06818c0.png" title=" The user initially open (completed)" width="1920"/>
+                <img src="d4beb3a072d8010d4f5aea419ca5bbc58ff040e08d20d40855c93370f06818c0.png" title=" Given that the user wants login in the page, he introduce the user and the password
+| user | password |
+| standard_user | secret_sauce | (completed)" width="1920"/>
+                <img src="4cf5e28f2801af16fe64c91cf78fda90e630957fb240c3f4621c0350339b52cf.png" title=" When the user is in the home page he add to car two products" width="1920"/>
+                <img src="4cf5e28f2801af16fe64c91cf78fda90e630957fb240c3f4621c0350339b52cf.png" title=" The user select products" width="1920"/>
+                <img src="4cf5e28f2801af16fe64c91cf78fda90e630957fb240c3f4621c0350339b52cf.png" title=" the user clicks on Select the first product" width="1920"/>
+                <img src="3fc5c6e62dcaa106f5aa8375ead7767502cc5f8fb86bf744aa5f93ef06c61369.png" title=" the user clicks on Select the second product" width="1920"/>
+                <img src="8e0ad6399a756f054b03df60a854a085d6be322c25cdb907244301b7959948a1.png" title=" the user clicks on Click on shopping car link" width="1920"/>
+                <img src="54ad201bd2952f9e41d097cb25e044fd0cafd2dcb5c3e7f053481ca2afc9db4c.png" title=" the user clicks on Click on checkout button" width="1920"/>
+                <img src="54ad201bd2952f9e41d097cb25e044fd0cafd2dcb5c3e7f053481ca2afc9db4c.png" title=" The user select products (completed)" width="1920"/>
+                <img src="54ad201bd2952f9e41d097cb25e044fd0cafd2dcb5c3e7f053481ca2afc9db4c.png" title=" When the user is in the home page he add to car two products (completed)" width="1920"/>
+                <img src="a6b894b0d6074bfee9d1a7c056cc1ccd945fec268dfebef99860b61506f01e10.png" title=" And make the checkout with the name, last_name and zip
+| name | last_name | zip |
+| Pablo | Hernandez | 762021 |" width="1920"/>
+                <img src="a6b894b0d6074bfee9d1a7c056cc1ccd945fec268dfebef99860b61506f01e10.png" title=" The user make checkout" width="1920"/>
+                <img src="a6b894b0d6074bfee9d1a7c056cc1ccd945fec268dfebef99860b61506f01e10.png" title=" the user enters 'Pablo' into Enter the name" width="1920"/>
+                <img src="c5d03ac3407df0c0e0905d2a9ddbf649ed385335e9c235bc02ce4a59681c259e.png" title=" the user enters 'Hernandez' into Enter the lastname" width="1920"/>
+                <img src="fb31d59c799446e2dea052b217892ef0fc8c414c11f124f93bf45fcdc3510ac1.png" title=" the user enters '762021' into Enter the zip" width="1920"/>
+                <img src="8348721f6e4a2ec9e457f2586b9094ceb6b893bd5e3cc995a9dabc47fe8cd272.png" title=" the user clicks on Click on continue button" width="1920"/>
+                <img src="1071d6550691e84521fcc1a6308cf91693efa8d63c7e3ed888a80dc7ddc097b9.png" title=" the user clicks on Click on finish button" width="1920"/>
+                <img src="1071d6550691e84521fcc1a6308cf91693efa8d63c7e3ed888a80dc7ddc097b9.png" title=" The user make checkout (completed)" width="1920"/>
+                <img src="1071d6550691e84521fcc1a6308cf91693efa8d63c7e3ed888a80dc7ddc097b9.png" title=" And make the checkout with the name, last_name and zip
+| name | last_name | zip |
+| Pablo | Hernandez | 762021 | (completed)" width="1920"/>
+                <img src="1071d6550691e84521fcc1a6308cf91693efa8d63c7e3ed888a80dc7ddc097b9.png" title=" Then Verify the text successful_process
+| successful_process |
+| Thank you for your order! |" width="1920"/>
+                <img src="1071d6550691e84521fcc1a6308cf91693efa8d63c7e3ed888a80dc7ddc097b9.png" title=" Then verify message" width="1920"/>
+                <img src="1071d6550691e84521fcc1a6308cf91693efa8d63c7e3ed888a80dc7ddc097b9.png" title=" Then Verify the text successful_process
+| successful_process |
+| Thank you for your order! | (completed)" width="1920"/>
+                <img src="1071d6550691e84521fcc1a6308cf91693efa8d63c7e3ed888a80dc7ddc097b9.png" title=" Example: {user=standard_user, password=secret_sauce, name=Pablo, last_name=Hernandez, zip=762021, successful_process=Thank you for your order!} (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+<div id="beforefooter"></div>
+<div id="bottomfooter">
+    <span class="version">Serenity BDD version 2.1.5</span>
+</div>
+</body>
+</html>

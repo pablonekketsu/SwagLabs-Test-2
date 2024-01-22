@@ -1,0 +1,44 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+group 'SwagLabs'
+version '1.0'
+compileJava.options.encoding = "UTF-8"
+compileTestJava.options.encoding = "UTF-8"
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.3.10")
+    }
+}
+ext {
+    serenityVersion = '2.1.5'
+    serenityCucumberVersion = '1.9.50'
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.1'
+    testImplementation 'org.assertj:assertj-core:3.25.1'
+    testImplementation 'org.slf4j:slf4j-simple:2.0.11'
+    testImplementation 'org.hamcrest:hamcrest:2.2'
+    implementation "net.serenity-bdd:serenity-screenplay-rest:2.1.5"
+    implementation "net.serenity-bdd:serenity-ensure:2.1.5"
+    implementation "net.serenity-bdd:serenity-core:2.1.5"
+    implementation "net.serenity-bdd:serenity-junit:2.1.5"
+    implementation "net.serenity-bdd:serenity-screenplay:2.1.5"
+    implementation "net.serenity-bdd:serenity-screenplay-webdriver:2.1.5"
+    implementation "net.serenity-bdd:serenity-cucumber:1.9.50"
+}
+
+gradle.startParameter.continueOnFailure = true
+
+test.finalizedBy(aggregate)

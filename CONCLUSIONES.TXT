@@ -1,0 +1,8 @@
+Conclusions
+
+Automation was easy to implement thanks to the good practices embedded in its development. Each element had a unique ID that could be easily associated with its respective component. The response times were quick. I utilized the screenplay design pattern for the development of this test, which is why it is focused on an actor. Additionally, the managed structure is clear and understandable, making it easy to maintain, scale, and reuse. It seamlessly integrates with CI/CD and provides easily readable reports. Thanks to the language used (Gherkin), it is ideal for collaborative team work.
+
+Regarding the project, some observations were made:
+Through brief exploratory tests, it was found that the page allows placing an order with an empty shopping cart.
+The text fields allow the insertion of 'n' characters, which should not be allowed.
+The postal code field should only accept digits.
